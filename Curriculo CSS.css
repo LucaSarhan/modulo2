@@ -1,0 +1,31 @@
+.background {
+    /*background-color: #3468fa;*/
+    background-color:#2DA8D8FF ;
+}
+
+.background2 {
+    /*background-color: blueviolet;*/
+    background-color: #2A2B2DFF; 
+}
+
+.background3 {
+    /*background-color: darkgreen;*/
+    background-color:#D9514EFF ;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+}
+
+body {
+    margin:0;
+}
+
+.input {
+    width: 1550;
+    height: 70px;
+    text-align: center;
+}
+
+.font{
+    color: white;
+}
