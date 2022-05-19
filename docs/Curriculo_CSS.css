@@ -5,7 +5,7 @@
 
 .background2 {
     /*background-color: blueviolet;*/
-    background-color: #2A2B2DFF; 
+    background-color: rgb(65, 71, 83); 
 }
 
 .background3 {
@@ -24,6 +24,7 @@ body {
     width: 1550;
     height: 70px;
     text-align: center;
+    color: white;
 }
 
 .font{
