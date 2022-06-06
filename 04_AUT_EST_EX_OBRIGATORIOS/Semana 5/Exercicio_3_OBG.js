@@ -1,48 +1,52 @@
-function getInput() {
-    var input = document.getElementById("input").value;
-    var numericArray = [input]
-    
-    numericArray.sort(function (a, b) {
-        return a - b;
-    });
-    
-    console.log('a,', numericArray);
-    
-    function binarySearch(arr, i) {
-        var mid = Math.floor(arr.length / 2);
-        console.log(arr[mid], i);
-    
-        if (arr[mid] === i) {
-            console.log('match', arr[mid], i);
-            return arr[mid];
-        } else if (arr[mid] < i && arr.length > 1) {
-            console.log('mid lower', arr[mid], i);
-            binarySearch(arr.splice(mid, Number.MAX_VALUE), i);
-        } else if (arr[mid] > i && arr.length > 1) {
-            console.log('mid higher', arr[mid], i);
-            binarySearch(arr.splice(0, mid), i);
-        } else {
-            console.log('not here', i);
-            return -1;
+function calc() {
+    var array = document.getElementById("array").value;
+    var array = array.split(",");
+    var array = array.map(i);
+    sortItems(array);
+    binarySearch(array, target);
+}
+
+
+function sortItems(array) {
+	let check = true;
+	do {
+		check = false;
+		for (let j = 0; j < array.length; j++) {
+			if (array[j] > array[j + 1]) {
+				let i = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = i;
+				check = true;
+			}
+		}
+	} while (check);
+    document.getElementById("showArray").innerHTML = ("Sua array ordenada: " + array);
+	return array
+}
+
+
+function binarySearch(array) {
+    let target = parseInt(document.getElementById("target").value);
+    let first = 0;
+    let last = array.length - 1;
+    while (first <= last){
+        middle = Math.ceil((first+last)/2);
+        if (array[middle] == target){
+            return document.getElementById("showTarget").innerHTML = ("Posição: " + middle);
         }
-    
-    }
-    var result = binarySearch(a, 100);
-    console.log(result);
-    function bubbleSort () {
-        for (let i = 0; i < numericArray.length; i++) {
-            if (numericArray[i] > numericArray[i +1]) {
-                let v1 = numericArray[i]
-                let v2 = numericArray[i +1] 
-                numericArray[i] = v2
-                numericArray[i +1] = v1
+        else {
+            if (array[middle] < target) {
+                first = middle + 1;
+            }
+            else {
+                last = middle - 1;
             }
         }
     }
-    
-    for (let j = 0; j < numericArray.length ; j++) {
-        bubbleSort();
-    }
-    
-    console.log(numericArray)
+    return document.getElementById("showTarget").innerHTML = ("Seu alvo não está na array.");
+}
+
+
+function i(number) {
+    return parseInt(number)
 }
