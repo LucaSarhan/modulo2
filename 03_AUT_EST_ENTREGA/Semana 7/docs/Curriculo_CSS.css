@@ -1,0 +1,32 @@
+.background {
+    /*background-color: #3468fa;*/
+    background-color:#2DA8D8FF ;
+}
+
+.background2 {
+    /*background-color: blueviolet;*/
+    background-color: rgb(65, 71, 83); 
+}
+
+.background3 {
+    /*background-color: darkgreen;*/
+    background-color:rgb(217, 180, 78) ;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+}
+
+body {
+    margin:0;
+}
+
+.input {
+    width: 1550;
+    height: 70px;
+    text-align: center;
+    color: white;
+}
+
+.font{
+    color: white;
+}
